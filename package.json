@@ -5,6 +5,7 @@
   "homepage": "https://Alekskarb.github.io/redux",
   "dependencies": {
     "gh-pages": "^2.1.1",
+    "pages": "^0.0.16",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.0"
