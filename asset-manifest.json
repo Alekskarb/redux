@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/redux/static/css/main.3aff9ab5.chunk.css",
-    "main.js": "/redux/static/js/main.0f3b49ee.chunk.js",
-    "main.js.map": "/redux/static/js/main.0f3b49ee.chunk.js.map",
+    "main.js": "/redux/static/js/main.2a863cdc.chunk.js",
+    "main.js.map": "/redux/static/js/main.2a863cdc.chunk.js.map",
     "runtime~main.js": "/redux/static/js/runtime~main.3027c944.js",
     "runtime~main.js.map": "/redux/static/js/runtime~main.3027c944.js.map",
     "static/js/2.2ae08011.chunk.js": "/redux/static/js/2.2ae08011.chunk.js",
     "static/js/2.2ae08011.chunk.js.map": "/redux/static/js/2.2ae08011.chunk.js.map",
     "index.html": "/redux/index.html",
-    "precache-manifest.ee5ef896e4f4613b1f851f28bdef91d5.js": "/redux/precache-manifest.ee5ef896e4f4613b1f851f28bdef91d5.js",
+    "precache-manifest.51bb0723120c6068f4f2d7d0285121f4.js": "/redux/precache-manifest.51bb0723120c6068f4f2d7d0285121f4.js",
     "service-worker.js": "/redux/service-worker.js",
     "static/css/main.3aff9ab5.chunk.css.map": "/redux/static/css/main.3aff9ab5.chunk.css.map"
   }
