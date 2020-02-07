@@ -1,14 +1,22 @@
 import React from 'react';
+import {connect} from "react-redux";
+import {setMaxValueAC, setStartValueAC} from "../reducer";
 
 const Menu =(props)=> {
 
     let changeStartValue = (event) => {
-        let value = Number(event.currentTarget.value);
-        props.setStartValue(value);};
+
+        let startValue = Number(event.currentTarget.value);
+        props.setStartValue(startValue);
+    };
+
+    let invalidMaxValue = props.maxInputSwitch ? 'maxError' : '';
+    let invalidStartValue = props.startInputSwitch ? 'startError' : '';
 
     let changeMaxValue = (event) => {
-        let newValue = event.currentTarget.value;
-        props.setMaxValue(newValue);};
+
+        let maxValue = +(event.currentTarget.value);
+        props.setMaxValue(maxValue);};
 
     return (
         <div className="container">
@@ -16,22 +24,39 @@ const Menu =(props)=> {
             <div>
                 <input type="number"
                        onChange={changeMaxValue}
-                       disabled={props.maxInputSwitch}
-                       value={props.maxData}
-                       className={props.invalidMaxValue}/>
+                       // disabled={props.maxInputSwitch}
+                       value={props.maxValue}
+                       className={invalidMaxValue}/>
             </div>
             <span className='button'>start value:</span>
             <div>
                 <input type="number"
                        onChange={changeStartValue}
-                       disabled={props.startInputSwitch}
-                       // onClick={changeStartValue}
-                       value={props.startData}
-                       className={props.invalidStartValue} />
+                       // disabled={props.startInputSwitch}
+                       value={props.startValue}
+                       className={invalidStartValue} />
             </div>
         </div>
     );
-}
+};
 
-
-export default Menu;
+const mapStateToProps = (state) => {
+    return {
+        maxInputSwitch: state.maxInputSwitch,
+        startInputSwitch: state.startInputSwitch,
+        startValue: state.startValue,
+        maxValue: state.maxValue,
+    }
+};
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setStartValue: (startValue) => {
+            dispatch(setStartValueAC(startValue))
+        },
+        setMaxValue: (maxValue) => {
+            dispatch(setMaxValueAC(maxValue))
+        },
+    };
+};
+export const MenuContainer = connect(mapStateToProps, mapDispatchToProps)(Menu);
+export default MenuContainer;
