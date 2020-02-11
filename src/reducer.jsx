@@ -74,9 +74,10 @@ export const reducer = (state = initialState, action) => {
                 isCounter: false
             }
         }
-        default: return state
+        default:
+            return state
     }
-}
+};
 
 
 export const setStartValueAC = (startValue) => {
@@ -87,10 +88,10 @@ export const setMaxValueAC = (maxValue) => {
 };
 export const setValuesAC = () => {
     return {type: SET_VALUES}
-}
+};
 export const upValueAC = () => {
     return {type: UP_VALUE}
-}
+};
 export const resetValuesAC = () => {
     return {type: RESET_VALUES}
 };

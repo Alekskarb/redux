@@ -2,10 +2,9 @@ import React from 'react';
 import {connect} from "react-redux";
 import {setMaxValueAC, setStartValueAC} from "../reducer";
 
-const Menu =(props)=> {
+const Menu = (props) => {
 
     let changeStartValue = (event) => {
-
         let startValue = Number(event.currentTarget.value);
         props.setStartValue(startValue);
     };
@@ -14,9 +13,9 @@ const Menu =(props)=> {
     let invalidStartValue = props.startInputSwitch ? 'startError' : '';
 
     let changeMaxValue = (event) => {
-
         let maxValue = +(event.currentTarget.value);
-        props.setMaxValue(maxValue);};
+        props.setMaxValue(maxValue);
+    };
 
     return (
         <div className="container">
@@ -24,7 +23,7 @@ const Menu =(props)=> {
             <div>
                 <input type="number"
                        onChange={changeMaxValue}
-                       // disabled={props.maxInputSwitch}
+                    // disabled={props.maxInputSwitch}
                        value={props.maxValue}
                        className={invalidMaxValue}/>
             </div>
@@ -32,9 +31,9 @@ const Menu =(props)=> {
             <div>
                 <input type="number"
                        onChange={changeStartValue}
-                       // disabled={props.startInputSwitch}
+                    // disabled={props.startInputSwitch}
                        value={props.startValue}
-                       className={invalidStartValue} />
+                       className={invalidStartValue}/>
             </div>
         </div>
     );

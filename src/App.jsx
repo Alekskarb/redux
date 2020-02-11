@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Menu from "./comps/Menu";
 import Display from "./comps/Display";
-import ButtonS from "./comps/ButtonS";
+import Button from "./comps/Button";
 import {connect} from "react-redux";
 import {
     setValuesAC, upValueAC, setStartValueAC, setMaxValueAC, resetValuesAC
@@ -19,7 +19,6 @@ class App extends React.Component {
     };
 
     setMaxValue = (maxValue) => {
-        debugger
         this.props.setMaxValue(maxValue)
     };
 
@@ -28,7 +27,6 @@ class App extends React.Component {
     };
 
     addValue = () => {
-        debugger
         this.props.upValue()
     };
 
@@ -40,28 +38,28 @@ class App extends React.Component {
 
         return (
             <div className='wrapper'>
-               {this.props.isCounter ?  <div className='display'>
+                {this.props.isCounter ? <div className='display'>
 
-                   <Display/>
+                        <Display/>
 
-                   <div className='displayButton'>
-                       <ButtonS setData={this.addValue}
-                                title='UP'
-                                switch={this.props.upSwitch}/>
+                        <div className='displayButton'>
+                            <Button setData={this.addValue}
+                                    title='UP'
+                                    switch={this.props.upSwitch}/>
 
-                       <ButtonS setData={this.deleteValue}
-                                title='RESET'
-                                switch={this.props.resetSwitch}
-                       />
-                   </div>
-               </div>
-               : <div className='menu'>
+                            <Button setData={this.deleteValue}
+                                    title='RESET'
+                                    switch={this.props.resetSwitch}
+                            />
+                        </div>
+                    </div>
+                    : <div className='menu'>
 
-                       <Menu/>
-                       <ButtonS setData={this.setValue} title='SET'
+                        <Menu/>
+                        <Button setData={this.setValue} title='SET'
                                 switch={this.props.setSwitch}/>
-                   </div>
-               }
+                    </div>
+                }
             </div>
         )
     }

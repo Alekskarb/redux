@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 const Display = (props) => {
 
     let invalidDisplayValues = props.invalidDisplayValues ? 'displayError' : '';
+
     return (
         <div className='text'>
             <div className={invalidDisplayValues}>
